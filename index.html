@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem sou eu?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio"  class="menu-item">Início</a>
+            </li>
+            <li>
+                <a href="#sobre"  class="menu-item">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos"  class="menu-item">Projetos</a>
+            </li>
+            <li>
+                <a href="#contato"  class="menu-item">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="img/BEL_KARAPAÃ.jpg" alt="Foto do israel"class="foto-perfil">
+        <h1>Israel</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front-End e Designer</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-texto">
+                Sou um estudante de Desenvolvimento Web, apaixonado por tecnologia e inovação. Minha jornada começou com um curso de Desenvolvimento Web no SENAi, onde tive a oportunidade de mergulhar em linguagens como HTML, CSS e JavaScript. Além disso, tenho conhecimentos em Design Gráfico, graças aos cursos da EPIC FLORIPA, o que me permite criar interfaces atraentes e funcionais.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="img/controle_3D.png" alt="Controle_3D" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Controle 3D</h3>
+                    <p class="paragrafo-projetos">Nintendo switch feito em 3D</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/cenario.jpg" alt="Cenario" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Cenario</h3>
+                    <p class="paragrafo-projetos">Cenario ilustrado</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/TOMAS, O TUBAS-01.jpg" alt="Tomaz" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Tomas, o Tubas</h3>
+                    <p class="paragrafo-projetos">Tubarão de circo ilustrado</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contato" class="contatos">
+        <h2 class="contatos-titulo">Entre em contato</h2>
+        
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" id="nome" class="text-form">
+            </div>
+            <div class="grupo-form">
+                <textarea placeholder="Digite sua mensagem" id="mensagem" class="text-form" rows="4"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Envie Mensagem</button>
+        </form>
+    </section>
+
+    <script>
+        
+        function enviarWhats(event) {
+
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5551989768668';
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+            window.open(url, '_blank');
+        }
+
+    </script>
+
+</body>
+</html>
