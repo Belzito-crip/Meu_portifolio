@@ -84,6 +84,7 @@ h1 {
     color: var(--primaria);
     font-weight: bold;
     margin-top: 20px;
+    text-align: center;
 }
 
 .cabecalho-sub-titulo {
